@@ -1,0 +1,13 @@
+name: Check SDK
+on:
+  workflow_dispatch:
+jobs:
+  check-sdk:
+    runs-on: ubuntu-latest  # 或 macos-latest
+    steps:
+      - name: Check Android SDK
+        run: |
+          echo "Checking if Android SDK is installed..."
+          sdkmanager --version || echo "Android SDK is not installed."
+          echo "ANDROID_HOME: $ANDROID_HOME"
+          echo "PATH: $PATH"
