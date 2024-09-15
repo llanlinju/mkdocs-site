@@ -11,3 +11,6 @@ jobs:
           sdkmanager --version || echo "Android SDK is not installed."
           echo "ANDROID_HOME: $ANDROID_HOME"
           echo "PATH: $PATH"
+
+      - name: Check Java version
+        run: echo "java --version"
