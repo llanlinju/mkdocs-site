@@ -5,6 +5,9 @@ jobs:
   check-sdk:
     runs-on: ubuntu-latest  # 或 macos-latest
     steps:
+      - name: Check Java version
+        run: echo "java --version"
+
       - name: Check Android SDK
         run: |
           echo "Checking if Android SDK is installed..."
@@ -12,5 +15,4 @@ jobs:
           echo "ANDROID_HOME: $ANDROID_HOME"
           echo "PATH: $PATH"
 
-      - name: Check Java version
-        run: echo "java --version"
+     
