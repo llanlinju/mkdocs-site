@@ -6,7 +6,10 @@ jobs:
     runs-on: ubuntu-latest  # 或 macos-latest
     steps:
       - name: Check Java version
-        run: echo "java --version"
+        run: echo "$(java --version)"
+
+      - name: Check Gradle Java version
+        run: gradlew -version
 
       - name: Check Android SDK
         run: |
