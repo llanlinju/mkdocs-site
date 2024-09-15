@@ -12,9 +12,6 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
 
       - name: Check Gradle Java version
-        run: gradlew -version
-
-      - name: Check Gradle Java version
         run: |
           chmod +x gradlew
           ./gradlew -version
@@ -26,4 +23,5 @@ jobs:
           echo "ANDROID_HOME: $ANDROID_HOME"
           echo "PATH: $PATH"
 
-     
+      - name: Check Gradle Java version
+        run: gradlew -version
