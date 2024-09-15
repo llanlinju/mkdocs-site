@@ -6,13 +6,15 @@ on: # 在什么时候触发工作流
   pull_request: # 在main分支合并别人提的pr时
     branches:
       - main
+  workflow_dispatch: # 添加这个来手动触发工作流
+
 jobs: # 工作流的具体内容
   deploy:
     runs-on: ubuntu-latest # 创建一个新的云端虚拟机 使用最新Ubuntu系统
     steps:
-      - uses: actions/checkout@v2 
+      - uses: actions/checkout@v2
       - uses: actions/setup-python@v2 # 再安装Python3和相关环境
         with:
           python-version: 3.x
       - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
-      - run: mkdocs gh-deploy --force 
+      - run: mkdocs gh-deploy --force
